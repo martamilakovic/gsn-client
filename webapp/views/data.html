@@ -1,0 +1,55 @@
+
+ <div class="row">
+  <div class="medium-10 medium-offset-1  columns">
+
+      <dl ng-init="selectedAccordion = 1" ng-model="selectedAccordion" class="accordion" data-accordion>
+        <dd>
+          <a ng-click="accordionClicked(1)">Accordion 1</a>
+          <div class="content"  ng-class = "{'active' : selectedAccordion == 1 }">
+                <div class="row">
+                  <div class="medium-2 columns">
+                    <select ng-model="selectedSensor" 
+                          ng-options="o.name for o in sensors" ng-change="sensorSelected()">
+                    </select>
+                  </div>
+                  <div class="medium-2 columns left">
+                    <select ng-model="selectedField" 
+                          ng-options="o for o in selectedSensor.structureFields" ng-change="">
+                    </select>
+                  </div>
+
+                </div>
+                
+          </div>
+        </dd>
+        <dd>
+          <a ng-click="accordionClicked(2)">Accordion 2</a>
+          <div class="content"  ng-class = "{'active' : selectedAccordion == 2 }">
+            Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </dd>
+        <dd>
+          <a ng-click="accordionClicked(3)">Accordion 3</a>
+          <div class="content" ng-class = "{'active' : selectedAccordion == 3 }">
+
+            <dl class="tabs" ng-init="selectedTab = 1" ng-model="selectedTab" data-tab>
+              <dd ng-class = "{'active' : selectedTab == 1 }" ><a ng-click="selectedTab = 1" >Table</a></dd>
+              <dd ng-class = "{'active' : selectedTab == 2 }"><a ng-click="selectedTab = 2" >Graph</a></dd>
+              <dd ng-class = "{'active' : selectedTab == 3 }"><a ng-click="selectedTab = 3" >Report</a></dd>
+            </dl>
+            <div class="tabs-content">
+              <div class="content" ng-class = "{'active' : selectedTab == 1 }">
+                <p>First panel content goes here...</p>
+              </div>
+              <div class="content" ng-class = "{'active' : selectedTab == 2 }">
+                <p>Second panel content goes here...</p>
+              </div>
+              <div class="content" ng-class = "{'active' : selectedTab == 3 }">
+                <p>Third panel content goes here...</p>
+              </div>
+            </div>
+          </div>
+        </dd>
+      </dl>
+  </div>
+</div>

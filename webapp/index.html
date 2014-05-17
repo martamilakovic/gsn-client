@@ -89,22 +89,32 @@
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
     <script src="http://j.maxmind.com/app/geoip.js"></script>
-    
+    <script src="bower_components/chart/amcharts/amcharts.js" type="text/javascript"></script>
+    <script src="bower_components/chart/amcharts/serial.js" type="text/javascript"></script>         
+
+    <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+    <script type="text/javascript" src="http://www.amcharts.com/lib/3/amstock.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/services/navigation.js"></script>
-        <script src="scripts/services/VirtualSensor.js"></script>
-        <script src="scripts/services/refresh.js"></script>
-        <script src="scripts/services/settings.js"></script>
-        <script src="scripts/controllers/navigation.js"></script>
-        <script src="scripts/controllers/home.js"></script>
-        <script src="scripts/controllers/data.js"></script>
-        <script src="scripts/controllers/map.js"></script>
-      <!--  <script src="scripts/directives/map.js"></script>-->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/navigation.js"></script>
+    <script src="scripts/services/VirtualSensor.js"></script>
+    <script src="scripts/services/refresh.js"></script>
+    <script src="scripts/services/settings.js"></script>
+    <script src="scripts/services/filter.js"></script>
+    <script src="scripts/services/drawRabbitTempChart.js"></script>
+    <script src="scripts/services/drawKeyboardTempChart.js"></script>
+    <script src="scripts/controllers/navigation.js"></script>
+    <script src="scripts/controllers/home.js"></script>
+    <script src="scripts/controllers/data.js"></script>
+    <script src="scripts/controllers/map.js"></script>
+    <script src="scripts/controllers/chart.js"></script>
+    <script src="scripts/controllers/table.js"></script>
+    <!--  <script src="scripts/directives/map.js"></script>-->
 
-        <!-- endbuild -->
+    <!-- endbuild -->
 </body>
 </html>

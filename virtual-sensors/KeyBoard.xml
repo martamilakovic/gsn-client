@@ -12,7 +12,7 @@
     <addressing>
         <predicate key="geographical">ZARI</predicate>
     </addressing>
-    <storage history-size="5m" />
+    <storage history-size="12h" />
     <streams>
         <stream name="input1">
             <source alias="source1" sampling-rate="1" storage-size="1">

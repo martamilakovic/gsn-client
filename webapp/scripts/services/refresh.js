@@ -5,7 +5,7 @@ angular.module('gsnClientApp')
 		
 		var defaultPollingTime = 10000;
         var polls = {};
-
+        
         this.startPolling = function(name, pollingTime, callback) {
                 // Check to make sure poller doesn't already exist
                 if (!polls[name]) {

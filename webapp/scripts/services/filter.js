@@ -1,5 +1,5 @@
 angular.module('gsnClientApp')
-	.service("FilterData", function ($http){
+	.service("FilterService", function ($http){
 		
 		var sName = "";
 
@@ -28,7 +28,7 @@ angular.module('gsnClientApp')
         $(nodes).find('header').each(function() {
         	var currentData = $(this);
         	
-        	currentData.children().each( function () { // iterate over fields
+        	currentData.children().each( function () {
             	var currentField = $(this);
             	dataName.push(currentField.text());
         	})
@@ -41,7 +41,7 @@ angular.module('gsnClientApp')
             var i = 0;
 			var field = {};
 
-			currentData.children().each( function () { // iterate over fields
+			currentData.children().each( function () {
             	var currentField = $(this);
             	
             	field[dataName[i]] = currentField.text();

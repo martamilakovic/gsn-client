@@ -1,66 +1,58 @@
  <div class="row">
   <div class="medium-10 medium-offset-1  columns">
-
-      <dl ng-init="selectedAccordion = 1" ng-model="selectedAccordion" class="accordion" data-accordion>
-        <dd>
-          <a ng-click="accordionClicked(1)">Accordion 1</a>
-          <div class="content"  ng-class = "{'active' : selectedAccordion == 1 }">
-                <div class="row">
-                  <div class="medium-2 columns">
-                    <select ng-model="selectedSensor" 
-                          ng-options="o.name for o in sensors" ng-change="sensorSelected()">
-                    </select>
-                  </div>
-                  <div class="medium-2 columns left">
-                    <select ng-model="selectedField" 
-                          ng-options="o for o in selectedSensor.structureFields" ng-change="">
-                    </select>
-                  </div>
-
-                </div>
-                
+  <dl ng-init="selectedAccordion = 1" ng-model="selectedAccordion" class="accordion" data-accordion>
+  <dd>
+    <div class="content"  ng-class = "{'active' : selectedAccordion == 1 }">
+      <div class="row">
+        <div ng-controller="Chart">
+          <div class="medium-2 columns">
+            Sensor:
+            <select ng-model="selectedSensor" id='selected_sen'
+                  ng-options="o.name for o in sensors" ng-change="getSelectedSensor()">
+            </select>
           </div>
-        </dd>
-        <dd>
-          <a ng-click="accordionClicked(2)">Accordion 2</a>
-          <div class="content"  ng-class = "{'active' : selectedAccordion == 2 }">
-            Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <div class="medium-2 columns left">
+            Data sets:
+            <select ng-model="selectedField" 
+                  ng-options="o for o in selectedSensor.structureFields" ng-change="">
+            </select>
           </div>
-        </dd>
-        <dd>
-          <a ng-click="accordionClicked(3)">Accordion 3</a>
-          <div class="content" ng-class = "{'active' : selectedAccordion == 3 }">
+        </div>
+      </div>        
+    </div>
 
-            <dl class="tabs" ng-init="selectedTab = 1" ng-model="selectedTab" data-tab>
-              <dd ng-class = "{'active' : selectedTab == 1 }" ><a ng-click="selectedTab = 1" >Table</a></dd>
-              <dd ng-class = "{'active' : selectedTab == 2 }"><a ng-click="selectedTab = 2" >Graph</a></dd>
-              <dd ng-class = "{'active' : selectedTab == 3 }"><a ng-click="selectedTab = 3" >Report</a></dd>
-            </dl>
-            <div class="tabs-content">
-              <div class="content" ng-class = "{'active' : selectedTab == 1 }">
-                <p>First panel content goes here...</p>
-              </div>
-              <div class="content" ng-class = "{'active' : selectedTab == 2 }">
-                <p>
-                  <div ng-controller="ElectrictyMeterChart">
-                    <form name= "chart_selector" >
-                      <select name= "chart" id='chart_sel' ng-click="getChartOption()">
-                        <option value = 0>Month Overview</option>
-                        <option value = 1>Single-Day Profile</option>
-                        <option value = 2>Month Profile</option>
-                        <option value = 3>Av-Min-Max Profile</option>
-                      </select>
-                    </form> 
-                  </div>
-                </p>
-                <p><div id="chartdiv" style="width:100%; height:400px;"></div></p>
-              </div>
-              <div class="content" ng-class = "{'active' : selectedTab == 3 }">
-                <p>Third panel content goes here...</p>
-              </div>
-            </div>
-          </div>
-        </dd>
-      </dl>
-  </div>
+    <dl class="tabs" ng-init="selectedTab = 1" ng-model="selectedTab" data-tab>
+      <dd ng-class = "{'active' : selectedTab == 1 }" ><a ng-click="selectedTab = 1" >Table</a></dd>
+      <dd ng-class = "{'active' : selectedTab == 2 }"><a ng-click="selectedTab = 2" >Graph</a></dd>
+      <dd ng-class = "{'active' : selectedTab == 3 }"><a ng-click="selectedTab = 3" >Report</a></dd>
+    </dl>
+    <div class="tabs-content">
+      <div ng-controller="Table">
+        <div class="content" ng-class = "{'active' : selectedTab == 1 }">                  
+          <table id="table">
+          </table>
+        </div>
+      </div>
+      <div class="content" ng-class = "{'active' : selectedTab == 2 }">
+        <div ng-controller="Chart">
+          <p>
+            <form name= "chart_selector">
+              <select name= "chart" id='chart_sel' ng-click="getChartOption()">
+                <option value = 0>Month Overview</option>
+                <option value = 1>Single-Day Profile</option>
+                <option value = 2>Month Profile</option>
+                <option value = 3>Av-Min-Max Profile</option>
+              </select>
+            </form> 
+          </p>
+        </div>
+        <p><div id="chartdiv" style="width:100%; height:400px;"></div></p>
+      </div>
+      <div class="content" ng-class = "{'active' : selectedTab == 3 }">
+        <p>Third panel content goes here...</p>
+      </div>
+    </div>
+  </dd>
+</dl>
+</div>
 </div>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gsnClientApp')
-  .controller("Chart", function ($scope, FilterService, DrawRabbitTempChartService, DrawKeyboardTempChartService) {
+  .controller("Chart", function ($scope, FilterService, TableService, DrawRabbitTempChartService, DrawKeyboardTempChartService) {
  
     $scope.getSelectedSensor = function() {
      if(document.getElementById('selected_sen'))
@@ -9,7 +9,10 @@ angular.module('gsnClientApp')
         var vSkill = document.getElementById('selected_sen');
         var vSkillText = vSkill.options[vSkill.selectedIndex].innerHTML;
         if(vSkillText.localeCompare("temprabbit") == 0)
+        {
           DrawRabbitTempChartService.GenerateChart();
+          TableService.GenerateTable();
+        }
         else if(vSkillText.localeCompare("keyboard") == 0)
           DrawKeyboardTempChartService.GenerateChart();
       }

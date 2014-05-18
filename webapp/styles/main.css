@@ -16,7 +16,9 @@ body,html{
     width:100%;
 }
 
-.row {min-width:100% !important;}
+.row {
+    min-width:100% !important;
+}
 
 /*.panel {
     max-height: 90vh;
@@ -74,7 +76,6 @@ body,html{
     bottom: 10px;
 }
 
-
 .overview {
     position: relative;
     min-height: 100px;
@@ -108,4 +109,8 @@ button.tiny, .button.small {
 
 table.tablesorter thead tr .header {
     padding-right: 15px;
+}
+
+.row .row {
+    margin-left: -5px !important;
 }

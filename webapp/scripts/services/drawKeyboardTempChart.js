@@ -1,5 +1,6 @@
 angular.module('gsnClientApp')
-  .service("DrawKeyboardTempChartService", function (FilterService){
+  .service("DrawKeyboardTempChartService", function (FilterService) {
+    
     var chart;
     var chartData = [];
 
@@ -24,7 +25,7 @@ angular.module('gsnClientApp')
 
         chartData.push({
           date: val1,
-          temperature: val2
+          value: val2
         });
       }
     });
@@ -47,7 +48,7 @@ angular.module('gsnClientApp')
         "bulletBorderAlpha": 1,
         "bulletColor":"#FFFFFF",
         "title": "red line",
-        "valueField": "temperature",
+        "valueField": "value",
         "useLineColorForBulletBorder":true
       }],
       "chartScrollbar": {

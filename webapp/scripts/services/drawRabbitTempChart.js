@@ -4,7 +4,7 @@ angular.module('gsnClientApp')
     var charDataArray = [];
     var chartData = [];
 
-    FilterService.setSensorName("keyboard");
+    FilterService.setSensorName("temprabbit");
 
     FilterService.getAllDataBySensorName(function (data) {
       var field = {};

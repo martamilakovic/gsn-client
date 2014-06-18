@@ -3,6 +3,7 @@
 angular.module('gsnClientApp')
   .controller('HomeController', function ($scope, RefreshService, SettingsService) {
 
+   
     $scope.sensors = [];
 
     $scope.updating = false;
@@ -16,8 +17,11 @@ angular.module('gsnClientApp')
     // init
     getSensorData();
 
-
     // callback functions
+
+    $scope.removeSensor = function(index) {
+        $scope.sensors.splice(index,1);
+    };
 
   	$scope.refreshClicked = function() {
         getSensorData();  
@@ -72,7 +76,7 @@ angular.module('gsnClientApp')
           }else{
             //$scope.sensors.push(entry); // new sensor added
             $scope.sensors.splice(index,1);
-            console.log(index);
+            //console.log(index);
           }
         });
     }
